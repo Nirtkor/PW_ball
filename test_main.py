@@ -1,3 +1,4 @@
+"""Tests for class Ball."""
 import pytest
 from main import Ball
 
@@ -14,13 +15,12 @@ def test_valid_radius(radius: float):
     assert Ball(radius).radius == radius
 
 
-
 uniform_ball_motion_check_ans = [(5, 3, 4, 137.51), (8.7, 4.5, 1.2, 35.563), (10, 10, 10, 212.958)]
 
 
 @pytest.mark.parametrize('radius, speed, time, ans', uniform_ball_motion_check_ans)
 def test_uniform(radius: float, speed: float, time: float, ans: float):
-    """The function checks the values uniform_motion
+    """The function checks the values uniform_motion.
 
     Args:
         radius (float): radius of ball
@@ -36,7 +36,7 @@ uniformly_accelerated_motion_ans = [(5, 5, 5, 356.197), (4.5, 1.5, 7.8, 220.979)
 
 @pytest.mark.parametrize('radius, acceleration, time, ans', uniformly_accelerated_motion_ans)
 def test_accelereted(radius: float, acceleration: float, time: float, ans: float):
-    """The function checks the values uniformly_accelerated_motion
+    """The function checks the values uniformly_accelerated_motion.
 
     Args:
         radius (float): radius of ball

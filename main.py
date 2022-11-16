@@ -1,12 +1,16 @@
+"""Class Ball."""
 from cmath import pi
 
 
 class BallErr(Exception):
     """Error for wrong attributes."""
+
     pass
 
 
 class Ball:
+    """Contains methods for ball movement."""
+
     def __init__(self, radius: float) -> None:
         """Method which initialize class Ball.
 
@@ -34,11 +38,10 @@ class Ball:
         if speed > 0 and time > 0:
             period = (self.radius * 2 * pi) / speed
             ang_velocity = (2 * pi) / period
-        else:
-            return None
-        to_valid = 180
-        good_digrees = 360
-        return round((ang_velocity * time) * (to_valid/pi) % good_digrees, 3)
+            to_valid = 180
+            good_digrees = 360
+            return round((ang_velocity * time) * (to_valid / pi) % good_digrees, 3)
+        return None
 
     def uniformly_accelerated_motion(self, acceleration: float, time):
         """Determines the turn of the ball in a certain time.
@@ -57,9 +60,8 @@ class Ball:
             ang_acceleration = ang_velocity / time
             to_valid = 180
             good_digrees = 360
-            return round(((ang_acceleration * time ** 2) / 2) * (to_valid/pi) % good_digrees, 3)
-        else:
-            return None
+            return round(((ang_acceleration * time ** 2) / 2) * (to_valid / pi) % good_digrees, 3)
+        return None
 
     def is_valid(self):
         """Checks acceptability of an attribute."""
