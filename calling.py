@@ -14,7 +14,7 @@ while condition != 'q':
         if time < 0:
             print('Нео, время не может идти в обратную сторону')
             break
-            
+        
         choose = float(input('\nЕсли мяч движется равномерно, введите 0. \
                         \nЕсли мяч движется равноускоренно, введите 1. \
                         \n'))
@@ -22,7 +22,7 @@ while condition != 'q':
             speed = float(input('\nВведите скорость мяча, если движение равномерное:'))
             ex_1 = Ball(radius)
             print('Точка сместилась на угол равный:', ex_1.uniform_motion(speed, time), '°')
-        elif choose == 1:    
+        elif choose == 1:
             acceleration = float(input('\nВведите ускорение мяча: '))
             ex_2 = Ball(radius)
             print('Точка сместилась на угол равный:', ex_2.uniformly_accelerated_motion(acceleration, time), '°')
@@ -32,4 +32,3 @@ while condition != 'q':
     except:
         condition = input('\nДанные должны иметь числовой вид записи, попробуйте снова.\
                    \nЧтобы выйти, введите q. Если желаете продолжить, введите любой символ.')
-
